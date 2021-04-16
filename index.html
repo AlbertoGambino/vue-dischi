@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <title>Vue dischi</title>
+        <!-- font awesame -->
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css">
+        <!-- vue -->
+        <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+        <!-- axios -->
+        <script src="https://cdn.jsdelivr.net/npm/axios@0.21.1/dist/axios.min.js"></script>
+        <!-- jquery -->
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <!-- css -->
+        <link rel="stylesheet" href="style.css">
+        <script src="script.js"></script>
+    </head>
+    <body>
+      <div class="header">
+        <h1>BOOL DISC</h1>
+      </div>
+        <div id="app" class="container">
+
+
+
+                <div v-for="disc in discs"class="disc">
+
+                      <div class="poster">
+
+                        <img :src="disc.poster" alt="">
+
+                      </div>
+                      <div class="title">
+
+                          <span>{{ disc.title }}</span>
+
+                      </div>
+                      <div class="author">
+
+                        <span>{{ disc.author }}</span>
+
+                      </div>
+                      <div class="genre">
+
+                        <span>{{ disc.genre }}</span>
+
+                      </div>
+                      <div class="year">
+
+                        <span>{{ disc.year }}</span>
+
+                      </div>
+                </div>
+        </div>
+    </body>
+</html>
