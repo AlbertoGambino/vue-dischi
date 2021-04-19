@@ -11,7 +11,26 @@ function initVue() {
         el: '#app',
         data: {
             discs: [],
+            generi: [],
+            selGenere: '',
 
+        },
+        computed:{
+          filtered: function(){
+
+            if(this.selGenere == "All"){
+
+              return this.discs
+              
+            } else{
+
+              return this.discs.filter(disc => {
+
+                return disc.genre.includes(this.selGenere)
+              })
+            }
+
+          }
         },
         mounted() {
 
@@ -20,6 +39,18 @@ function initVue() {
 
                     this.discs = data.data.response;
 
+                    for (let i = 0; i < this.discs.length; i++) {
+
+                      const disc = discs[i]
+
+                      if(!this.generi.includes(disc.genre)){
+
+                        this.generi.push(disc.genre)
+                      }
+                    }
+
+
+
                 })
                 .catch(() => console.log('error'));
         }
@@ -27,5 +58,6 @@ function initVue() {
 }
 function init() {
     initVue();
+
 }
 document.addEventListener('DOMContentLoaded', init);

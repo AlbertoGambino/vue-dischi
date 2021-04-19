@@ -19,11 +19,22 @@
       <div class="header">
         <h1>BOOL DISC</h1>
       </div>
+      <!-- <audio allow="autoplay" controls >
+        <source src="Mims.mp3" type="audio/mp3">
+          Your browser does not support the audio element.
+      </audio> -->
         <div id="app" class="container">
 
+          <select class="" v-model= "selGenere" name="">
+            <option selected value>All</option>
+            <option v-for="genere in generi" :value="genere">
 
+              {{genere}}
 
-                <div v-for="disc in discs"class="disc">
+            </option>
+          </select>
+
+                <div v-for="disc in filtered"class="disc">
 
                       <div class="poster">
 
