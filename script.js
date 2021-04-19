@@ -21,7 +21,7 @@ function initVue() {
             if(this.selGenere == "All"){
 
               return this.discs
-              
+
             } else{
 
               return this.discs.filter(disc => {
@@ -39,9 +39,14 @@ function initVue() {
 
                     this.discs = data.data.response;
 
+
+
                     for (let i = 0; i < this.discs.length; i++) {
 
-                      const disc = discs[i]
+
+                      const disc = this.discs[i]
+
+
 
                       if(!this.generi.includes(disc.genre)){
 
